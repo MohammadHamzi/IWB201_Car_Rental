@@ -1,159 +1,117 @@
 /* ===== style.css : ملف التنسيق الوحيد للموقع ===== */
+
+/* خط Cairo من Google Fonts (إذا لم يتوفر يُستخدم Tahoma ثم Arial) */
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
 
-/* --- كل الألوان والخطوط معرّفة هنا فقط ---
-   سمة داكنة: أخضر غابي عميق مع ذهبي كريمي ولمسات خضراء نعناعية */
-:root {
-  /* الأخضر الداكن بدرجاته */
-  --forest-950: #08140f;   /* خلفية الصفحة */
-  --forest-900: #0c2a22;   /* الشريط العلوي */
-  --forest-800: #10231c;   /* البطاقات */
-  --forest-700: #17302a;   /* المربعات والحقول ورؤوس الجداول */
-  --forest-600: #1f3d34;   /* صفوف متبادلة وتمييز */
-  --forest-500: #2b4a40;   /* الحدود */
-
-  /* الذهبي */
-  --gold-200: #f6e2b0;     /* ذهبي فاتح كريمي: العناوين الكبيرة */
-  --gold-400: #e0bf6e;     /* الذهبي الأساسي: الخطوط والعناوين الفرعية */
-  --gold-700: #5e5630;     /* ذهبي خافت */
-
-  /* الأخضر النعناعي (الأزرار) */
-  --mint-500: #2e8f68;
-  --mint-400: #3fae83;
-  --mint-200: #8fdcbc;
-
-  /* النصوص */
-  --text: #f1f0e6;        /* نص فاتح على الخلفيات الداكنة */
-  --muted: #93aa9f;       /* نص ثانوي */
-  --text-dark: #0b1a15;   /* نص داكن على الخلفيات الفاتحة */
-  --paper: #f6f1e3;       /* خلفية النافذة المنبثقة الفاتحة */
-  --paper-total: #efe3bd;
-
-  --danger: #f28b8b;
-  --ok: var(--mint-200);
-
-  --input-bg: var(--forest-700);   /* لون حقول الإدخال النصية (يتغير من هنا فقط) */
-  --input-text: var(--text);
-  --input-border: var(--forest-500);
-
-  --font-family: "Cairo", "Segoe UI", Tahoma, "Noto Naskh Arabic", Arial, sans-serif;
-  --font-size: 16px;       /* حجم الخط الأساسي لكل الكلمات */
-  --font-size-small: 14px;
-  --font-size-h1: 28px;
-  --font-size-h2: 21px;
-  --radius: 14px;
-}
-
-/* --- الخط: نوع وحجم الكلمات من مكان واحد --- */
-body, table, input, select, textarea, button {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
+/* الخط: نوع وحجم الكلمات من مكان واحد */
+body, table, input {
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  font-size: 12pt;
 }
 
 body {
   margin: 0;
-  background: var(--forest-950);
-  color: var(--text);
-  line-height: 1.8;
+  background-color: #08140f;
+  color: #f1f0e6;
 }
 
-h1 { font-size: var(--font-size-h1); font-weight: 700; color: var(--gold-200); margin: 0 0 12px; }
-h2 { font-size: var(--font-size-h2); font-weight: 600; color: var(--gold-400); margin: 0 0 10px; }
-legend { font-weight: 700; color: var(--gold-400); padding: 0 8px; }
-a { color: var(--gold-400); }
-a:hover { color: var(--gold-200); }
-.small { font-size: var(--font-size-small); }
+h1 { font-size: 21pt; font-weight: bold; color: #f6e2b0; }
+h2 { font-size: 16pt; font-weight: bold; color: #e0bf6e; }
+legend { font-weight: bold; color: #e0bf6e; }
+a { color: #e0bf6e; word-break: break-all; }
 
-/* --- الهيكل العام --- */
-#header { background: var(--forest-900); padding: 16px 28px 0; }
-#header .brand { font-size: var(--font-size-h1); font-weight: 700; color: var(--gold-200); margin: 0 0 8px; }
-#header .roadline { height: 0; border-top: 2px solid var(--gold-400); margin-top: 10px; }
-
-#nav ul { list-style: none; margin: 0; padding: 0; }
-#nav li { display: inline-block; margin-left: 4px; }
-#nav a, #nav .exit-link {
-  display: inline-block; padding: 6px 14px; color: var(--muted); text-decoration: none;
-  border-bottom: 3px solid transparent;
+/* الشريط العلوي وقائمة التنقل */
+#header { background-color: #0c2a22; padding: 16px 28px 0 28px; }
+p.brand { font-size: 21pt; font-weight: bold; color: #f6e2b0; margin: 0 0 8px 0; }
+#nav ul { list-style-type: none; margin: 0; padding: 0; }
+#nav li { float: right; margin-left: 6px; }
+#nav a {
+  display: block;
+  padding: 6px 14px;
+  color: #93aa9f;
+  text-decoration: none;
+  border-bottom: 3px solid #0c2a22;
 }
-#nav a:hover, #nav .exit-link:hover { color: var(--gold-200); border-bottom-color: var(--gold-400); }
-#nav a.current { color: var(--gold-200); border-bottom-color: var(--gold-400); font-weight: 700; }
+#nav a:hover { color: #f6e2b0; border-bottom-color: #e0bf6e; }
+#nav a.current { color: #f6e2b0; border-bottom-color: #e0bf6e; font-weight: bold; }
+div.roadline { clear: both; border-top: 2px solid #e0bf6e; }
 
-#content { max-width: 980px; margin: 28px auto; padding: 0 16px; }
+/* المحتوى والبطاقات */
+#content { width: 90%; max-width: 960px; margin: 28px auto; }
 .card {
-  background: var(--forest-800); border: 1px solid var(--forest-600);
-  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 20px;
+  background-color: #10231c;
+  border: 1px solid #1f3d34;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
 }
-#footer { text-align: center; padding: 16px; font-size: var(--font-size-small); color: var(--muted); }
+#footer { text-align: center; padding: 16px; font-size: 10pt; color: #93aa9f; }
 
-/* --- الجداول --- */
-.table-wrap { overflow-x: auto; border-radius: 10px; }
-table { border-collapse: collapse; width: 100%; background: var(--forest-800); }
-th, td { border: 1px solid var(--forest-600); padding: 8px 10px; text-align: center; }
-th { background: var(--forest-700); color: var(--gold-200); font-weight: 600; }
-table.branches tbody tr:nth-child(even) td { background: var(--forest-700); }
+/* الجداول */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; background-color: #10231c; }
+th, td { border: 1px solid #1f3d34; text-align: center; }
+th { background-color: #17302a; color: #f6e2b0; font-weight: bold; }
 td.model { text-align: right; }
-.car-img { width: 120px; height: 90px; object-fit: cover; vertical-align: middle; border-radius: 8px; }
+tr.alt td { background-color: #17302a; }
+tr.selected-row td { background-color: #1f3d34; }
+tr.details-row td { background-color: #1f3d34; text-align: right; }
+img.car-img { width: 120px; height: 90px; }
 
-tr.details-row { display: none; }
-tr.details-row td { background: var(--forest-600); text-align: right; }
-.details-box { display: none; }
-.details-box ul { margin: 0; padding: 0 20px 0 0; }
-
-table.branches tbody tr.hover-row td, table.branches tbody tr:hover td { background: var(--forest-600); }
-
-/* --- حقول الإدخال: كل حقول النص بنفس التنسيق --- */
-input[type="text"] {
-  background: var(--input-bg); color: var(--input-text);
-  border: 1px solid var(--input-border); border-radius: 8px;
-  padding: 7px 12px; width: 260px;
+/* حقول الإدخال النصية: كلها بنفس التنسيق من مكان واحد */
+input[type="text"], input[type="tel"], input[type="email"] {
+  background-color: #17302a;
+  color: #f1f0e6;
+  border: 1px solid #2b4a40;
+  padding: 7px 12px;
+  width: 260px;
 }
-input[type="text"]:focus { outline: 2px solid var(--gold-400); }
-input.invalid { border-color: var(--danger); }
-input[type="checkbox"] { accent-color: var(--mint-500); width: 18px; height: 18px; vertical-align: middle; }
+input.invalid { border-color: #f28b8b; }
 
-fieldset { border: 1px dashed var(--forest-500); border-radius: var(--radius); margin-bottom: 16px; padding: 12px 18px; }
+/* النموذج */
+fieldset { border: 1px dashed #2b4a40; margin-bottom: 16px; padding: 12px 18px; }
 .field { margin: 10px 0; }
-.field label { display: inline-block; min-width: 160px; font-weight: 600; }
-.hint { color: var(--muted); font-size: var(--font-size-small); }
-.error { display: block; color: var(--danger); font-size: var(--font-size-small); min-height: 1em; margin-right: 164px; }
-.required-mark { color: var(--danger); }
+.field label { display: inline-block; width: 160px; font-weight: bold; }
+.hint { color: #93aa9f; font-size: 10pt; }
+.error { display: block; color: #f28b8b; font-size: 10pt; margin-right: 164px; }
+.required-mark { color: #f28b8b; }
+.msg { color: #f28b8b; font-weight: bold; }
 
-/* --- الأزرار: أخضر نعناعي للإجراء الرئيسي، وذهبي للثانوي --- */
-button, input[type="submit"] {
-  background: var(--mint-500); color: var(--text-dark); border: 0;
-  border-radius: 10px; padding: 10px 28px; cursor: pointer; font-weight: 700;
+/* الأزرار */
+input[type="submit"], input[type="button"] {
+  background-color: #2e8f68;
+  color: #0b1a15;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
-button:hover, input[type="submit"]:hover { background: var(--mint-400); }
-input[type="button"] {
-  background: var(--gold-400); color: var(--text-dark); border: 0;
-  border-radius: 10px; padding: 10px 28px; cursor: pointer; font-weight: 700;
-}
-input[type="button"]:hover { background: var(--gold-200); }
-.actions { margin-top: 16px; }
+input[type="submit"]:hover, input[type="button"]:hover { background-color: #3fae83; }
+#cancelBtn { background-color: #e0bf6e; }
 
-/* --- الرسائل --- */
-.msg { margin-top: 10px; font-weight: 600; }
-.msg.bad { color: var(--danger); }
-.msg.good { color: var(--ok); }
+/* إظهار وإخفاء العناصر (يتحكم بها jQuery) */
 #reservation { display: none; }
 
-/* --- نافذة النتيجة: النسخة الفاتحة (كريمية) من نفس الألوان --- */
-.overlay {
-  display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0;
-  background: rgba(8, 20, 15, 0.82); z-index: 10;
+/* نافذة النتيجة: النسخة الفاتحة من نفس الألوان */
+#resultBox {
+  display: none;
+  position: fixed;
+  top: 8%;
+  left: 0;
+  right: 0;
+  width: 90%;
+  max-width: 540px;
+  margin: 0 auto;
+  background-color: #f6f1e3;
+  color: #0b1a15;
+  border-top: 8px solid #e0bf6e;
+  border-radius: 14px;
+  padding: 20px 24px;
 }
-.modal {
-  background: var(--paper); color: var(--text-dark); max-width: 560px; margin: 8vh auto 0;
-  padding: 20px 24px; border-top: 8px solid var(--gold-400); border-radius: var(--radius);
-  max-height: 80vh; overflow: auto;
-}
-.modal h2 { color: var(--forest-900); }
-.modal table, .modal td { background: var(--paper); color: var(--text-dark); border-color: #d9cfae; }
-.modal th { background: var(--forest-900); color: var(--gold-200); }
-.modal .total-line td { font-weight: 700; background: var(--paper-total); }
+#resultBox h2 { color: #0c2a22; }
+#resultBox table, #resultBox td { background-color: #f6f1e3; color: #0b1a15; border-color: #d9cfae; }
+#resultBox th { background-color: #0c2a22; color: #f6e2b0; }
+#resultBox tr.total td { font-weight: bold; background-color: #efe3bd; }
 
-@media (max-width: 640px) {
-  .field label { display: block; }
-  .error { margin-right: 0; }
-  input[type="text"] { width: 90%; }
-}
+.hidden { display: none; }

@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" dir="rtl">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الرئيسية - تأجير السيارات</title>
+  <title>الرئيسية - يوني كار</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="jquery-4_0_0.js"></script>
   <script type="text/javascript" src="myFunctions.js"></script>
 </head>
 <body>
@@ -32,23 +31,20 @@
     <div class="card">
       <h2>أعضاء المجموعة</h2>
       <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>الاسم بالعربية</th><th>Name in English</th><th>الرقم الجامعي</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>[الاسم 1]</td><td>[Name 1]</td><td>[ID 1]</td></tr>
-          <tr><td>[الاسم 2]</td><td>[Name 2]</td><td>[ID 2]</td></tr>
-          <tr><td>[الاسم 3]</td><td>[Name 3]</td><td>[ID 3]</td></tr>
-          <tr><td>[الاسم 4]</td><td>[Name 4]</td><td>[ID 4]</td></tr>
-        </tbody>
+      <table cellspacing="0" cellpadding="8">
+        <tr><th>الاسم بالعربية</th><th>Name in English</th><th>الرقم الجامعي</th><th>الصف</th></tr>
+        <tr><td>محمد حمزة</td><td>Mohamad Hamzi</td><td>345952</td><td>C1</td></tr>
+        <tr class="alt"><td>عمران زبداني</td><td>Omran Zbdani</td><td>295006</td><td>C1</td></tr>
+        <tr><td>صباح السمان</td><td>Sabah Al Samman</td><td>371516</td><td>C1</td></tr>
+        <tr class="alt"><td>اية حزب الله</td><td>Aya Hizb Allah</td><td>344000</td><td>C1</td></tr>
+        <tr><td>دلع علايا</td><td>Dalaa Alaya</td><td>347834</td><td>C2</td></tr>
       </table>
       </div>
     </div>
 
     <div class="card">
       <h2>رابط النشر على الإنترنت</h2>
-      <p><a href="https://example.com/car-rental/home.html">https://example.com/car-rental/home.html</a></p>
+      <p><a href="https://mohammadhamzi.github.io/IWB201_Car_Rental/home.html">https://mohammadhamzi.github.io/IWB201_Car_Rental/home.html</a></p>
     </div>
 
     <div class="card">
@@ -57,7 +53,8 @@
         <li>يمكنك اختيار أكثر من سيارة في طلب حجز واحد، وتُطبَّق مدة التأجير نفسها على كل السيارات المختارة.</li>
         <li>في نموذج الحجز، الرقم الوطني وتاريخا البداية والنهاية حقول إلزامية، وباقي الحقول اختيارية.</li>
         <li>يُطبّق خصم 5% على المبلغ الإجمالي إذا تجاوزت مدة التأجير 10 أيام.</li>
-        <li>صيغة التاريخ المعتمدة في نموذج الحجز: yyyy-mm-dd.</li>
+        <li>صيغة التاريخ المعتمدة في نموذج الحجز: <span dir="ltr">yyyy-mm-dd</span> (يُكتب اليوم والشهر من خانتين فقط، ويوضع الصفر على اليسار إذا كان الرقم من خانة واحدة، مثال: <span dir="ltr">2026-12-02</span>).</li>
+        <li>غيّرنا نوع الخط إلى Cairo (يُحمَّل بسطر واحد داخل ملف style.css نفسه، ويُستخدم Tahoma ثم Arial إذا تعذّر تحميله)، وذلك ضمن صلاحياتنا في تصميم الواجهات وتنسيق الصفحات من حيث الشكل كما ورد في نص الوظيفة، ونوع الخط وحجمه معرّفان في مكان واحد في ملف التنسيق.</li>
       </ul>
     </div>
   </div>
