@@ -150,14 +150,14 @@ function readSelectedCars() {
 }
 
 function refreshSummary() {
-  var text = "";
+  var html = "";
   for (var i = 0; i < selModels.length; i++) {
     if (i > 0) {
-      text = text + "، ";
+      html = html + "<br />";
     }
-    text = text + selModels[i] + " (" + selCodes[i] + ")";
+    html = html + "<span dir=\"ltr\">" + selModels[i] + " (" + selCodes[i] + ")</span>";
   }
-  $("#selectedSummary").text(text);
+  $("#selectedSummary").html(html);
 }
 
 function showError(id, message) {

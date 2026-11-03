@@ -55,7 +55,13 @@ th { background-color: #17302a; color: #f6e2b0; font-weight: bold; }
 td.model { text-align: right; }
 tr.alt td { background-color: #17302a; }
 tr.selected-row td { background-color: #1f3d34; }
-tr.details-row td { background-color: #1f3d34; text-align: right; }
+tr.details-row td { background-color: #1f3d34; text-align: right; color: #e0bf6e; }
+p.details-text { margin: 4px 0; }
+tr.details-row b { color: #f6f3e8; }
+span.sep { color: #6ec1e4; font-weight: bold; padding: 0 8px; }
+
+/* ملاحظات الصفحة الرئيسية بلون مختلف */
+ul.notes li { color: #9fdcc0; }
 img.car-img { width: 120px; height: 90px; }
 
 /* حقول الإدخال النصية: كلها بنفس التنسيق من مكان واحد */
@@ -65,11 +71,13 @@ input[type="text"], input[type="tel"], input[type="email"] {
   border: 1px solid #2b4a40;
   padding: 7px 12px;
   width: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 input.invalid { border-color: #f28b8b; }
 
 /* النموذج */
-fieldset { border: 1px dashed #2b4a40; margin-bottom: 16px; padding: 12px 18px; }
+fieldset { border: 1px dashed #2b4a40; margin-bottom: 16px; padding: 12px 18px; min-width: 0; }
 .field { margin: 10px 0; }
 .field label { display: inline-block; width: 160px; font-weight: bold; }
 .hint { color: #93aa9f; font-size: 10pt; }
@@ -97,7 +105,10 @@ input[type="submit"]:hover, input[type="button"]:hover { background-color: #3fae
 #resultBox {
   display: none;
   position: fixed;
-  top: 8%;
+  top: 4%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-sizing: border-box;
   left: 0;
   right: 0;
   width: 90%;
