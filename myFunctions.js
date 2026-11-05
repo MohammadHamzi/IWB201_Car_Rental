@@ -274,11 +274,10 @@ function showResult() {
 /* ---------- ربط الأحداث (jQuery) ---------- */
 $(document).ready(function () {
 
-  // زر الخروج في شريط التنقل (كل الصفحات)
+  // زر الخروج في شريط التنقل (كل الصفحات): إذا ضغط "موافق" ينتقل إلى صفحة فارغة
   $("a.exit-link").click(function () {
     if (confirm("هل تريد الخروج من الموقع؟")) {
-      window.close();
-      window.location.href = "about:blank";
+      return true;
     }
     return false;
   });
